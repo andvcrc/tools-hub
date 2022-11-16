@@ -25,6 +25,7 @@ pesquisarCep = async () => {
         const dados = await fetch(url)
         const endereco = await dados.json()
         if(endereco.hasOwnProperty('erro')) {
+            limparFormulario()
             alert('CEP não encontrado!')
         } else {
             preencherFormulario(endereco);
